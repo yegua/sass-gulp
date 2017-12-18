@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+	    <meta content="yes" name="apple-touch-fullscreen" />
+	    <meta content="telephone=no,email=no" name="format-detection" />
+	    <meta content="maximum-dpr=2" name="flexible" />
+	    <meta content="modeName=750-12" name="grid" />
+	    <script type="text/javascript" src="../js/libs/rem.js"></script>
+		<title>详细地址</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/order.css"/>
+		<style type="text/css">
+			.address-list{
+				background: #f1f1f1;
+			}
+			@media only screen and (min-width: 768px) {
+				html,body{
+					overflow-y: auto;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="order-contain">				
+			<div class="address-list wrapper">	
+				<ul style="border-bottom: 1px solid #bdbdbd;padding-bottom: 0.2rem;">					
+					<li class="flex flex-align-center">
+						<label>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+						<input type="text" value="魏涛" />
+					</li>
+					<li class="flex flex-align-center">
+						<label>联系方式：</label>
+						<input type="text" value="178489899"/>
+					</li>
+					<li class="flex flex-align-center">
+						<label>选择城市：</label>
+						<input type="text" value="广东省-深圳市-南山区"/>
+					</li>
+					<li class="flex flex-align-center" style="border-bottom: none;">
+						<label>详细地址：</label>
+						<input type="text" value="中科大厦" />
+						<i class="iconfont">&#xe60a;</i>
+					</li>
+				</ul>
+				<div class="intelligent-add">
+					<h1 class="flex flex-pack-between flex-align-center">
+						<img src="../images/zhineng-add.png">
+						<span>
+							<em>地址智能识别</em>
+							<em>粘贴收件人信息，可自动识别姓名，联系方式和地址</em>
+						</span>
+						<span class="arrow arrow-down"></span>
+					</h1>
+					<div class="add-info">
+						<div class="add-show">
+							<textarea id="add-info" placeholder="粘贴整段地址，自动识别姓名、电话和地址 例：顺小哥，13800138000，广东省深圳市南山区高新园中科大厦"></textarea>					
+							<span><em id="curNum">0</em>/300</span>						
+						</div>
+						<p><button>智能识别</button></p>
+					</div>
+					
+				</div>
+				<div class="btn-confirm">确    定</div>
+			</div>			
+		</div>
+		<script src="../js/libs/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//隐藏显示智能地址输入
+			var flag = false;
+			$('.intelligent-add').find('h1').click(function(){
+				$('.add-info').slideToggle();
+				if(!flag){				
+					$(this).find('.arrow').removeClass('arrow-down').addClass('arrow-up');
+				}else{				
+					$(this).find('.arrow').removeClass('arrow-up').addClass('arrow-down');
+				};
+				flag = !flag;			
+			});
+			//输入框限制个数
+			$('#add-info').on('input',function(){
+			　　if($(this).val().trim().length >= 0 && $(this).val().trim().length <= 300) {
+			　　　　$('#curNum').text($(this).val().trim().length);
+			　　} else {
+			　　　　alert('最多只能输入300个字哦')
+			　　}
+			});		
+		</script>
+	</body>
+</html>

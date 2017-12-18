@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+	    <meta content="yes" name="apple-touch-fullscreen" />
+	    <meta content="telephone=no,email=no" name="format-detection" />
+	    <meta content="maximum-dpr=2" name="flexible" />
+	    <meta content="modeName=750-12" name="grid" />
+	    <script type="text/javascript" src="../js/libs/rem.js"></script>
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+		<style type="text/css">
+			input::-webkit-input-placeholder{
+			    color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="login-contain">
+			<header></header>
+			<form>
+				<p class="flex flex-align-center">
+					<label for=""><img src="../images/icon-man.png"/></label><input type="text" name="username" placeholder="请输入账号" />
+				</p>
+				<p class="flex flex-align-center">
+					<label><img src="../images/icon-psw.png"/></label><input id="showpsw" type="password" name="psw" placeholder="请输入密码" />
+					<span class="eye"></span>
+				</p>
+				<p class="last flex flex-pack-between">
+					<a href="javacript:;">
+						<input type="checkbox" class="iconfont" name="remberPsw" id="remberPsw" />
+						<span>记住登录密码</span>
+					</a>
+					<a href="javacript:;">短信验证码登录</a>
+				</p>
+				<p class="last btn-login">
+					<button type="button">登&nbsp;录</button>
+				</p>
+				<p class="last flex flex-pack-center">
+					<a class="ui-blue" href="register.html">注册新账号</a>
+					<a class="ui-blue" href="javacript:;">忘记密码？</a>
+				</p>
+			</form>
+			<p class="version">版本：V2.0.15-20171025-release</p>
+		</div>
+		<script src="../js/libs/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('.eye').click(function(){
+				if($(this).hasClass('show')){					
+					$(this).removeClass('show');
+					$('#showpsw').prop('type','password');
+					console.log($('#showpsw').prop('type'));
+				}else{
+					//显示密码
+					$('#showpsw').prop('type','text');				
+					$(this).addClass('show');
+				}
+			})
+		</script>
+	</body>
+</html>

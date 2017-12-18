@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+	    <meta content="yes" name="apple-touch-fullscreen" />
+	    <meta content="telephone=no,email=no" name="format-detection" />
+	    <meta content="maximum-dpr=2" name="flexible" />
+	    <meta content="modeName=750-12" name="grid" />
+	    <script type="text/javascript" src="../js/libs/rem.js"></script>
+		<title>录单</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/order.css"/>
+		<style type="text/css">
+			html,body{
+				overflow: hidden;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="order-contain">			
+			<div class="wrapper order-entry">
+				<ul>
+					<li class="flex flex-align-center">
+						<label><img src="../images/icon-sender.png"/></label>
+						<input type="text" placeholder="请选择寄件人详细地址" readonly="readonly"/>
+					</li>
+					<li class="flex flex-align-center">
+						<label><img src="../images/icon-shou.png"/></label>
+						<input type="text" placeholder="请选择收件人详细地址"  readonly="readonly"/>
+					</li>
+				</ul>
+				<p class="white-space"></p>
+				<div class="choose-list flex">
+					<dl id="goodsType">
+						<dt>物品类型</dt>
+						<dd>文件</dd>
+					</dl>
+					<dl id="doorDelivery" class="last">
+						<dt>上门提货</dt>
+						<dd>是</dd>
+					</dl>
+				</div>
+				<div class="choose-list flex last">
+					<dl id="zengzhiSelect">
+						<dt>增值服务</dt>
+						<dd>选填</dd>
+					</dl>
+					<dl id="payType" class="last">
+						<dt>付款方式</dt>
+						<dd>寄付</dd>
+					</dl>
+				</div>
+			</div>
+			<footer class="flex">
+				<p class="flex flex-align-center flex-pack-center">
+					<input type="checkbox" class="iconfont"/>
+					<label>我同意《快运运单契约条款》</label>
+				</p>
+				<button>下单</button>
+			</footer>
+			<!--物品类型-->
+			<div id="goodsSelect" class="select-box">
+				<h2>物品名称<em class="close">&times;</em></h2>
+				<ul class="flex flex-pack-around flex-hw">
+					<li>文件</li>
+					<li>数码产品</li>
+					<li>生活用品</li>
+					<li>服饰</li>
+					<li>食品</li>
+					<li>其他</li>
+				</ul>
+				<p class="confirm-btn">确       定</p>
+			</div>
+			<!--上门服务-->
+			<div id="serviceSelect" class="select-box">
+				<h2>上门提货<em class="close">&times;</em></h2>
+				<ul class="flex flex-pack-around flex-hw">
+					<li>是</li>
+					<li>否</li>					
+				</ul>
+				<p class="confirm-btn">确       定</p>
+			</div>
+			<!--上门服务-->
+			<div id="paySelect" class="select-box">
+				<h2>付款方式<em class="close">&times;</em></h2>
+				<ul class="flex flex-pack-around flex-hw">
+					<li>寄付</li>
+					<li>到付</li>	
+					<li>现金</li>	
+				</ul>
+				<p class="confirm-btn">确       定</p>
+			</div>
+			<!--增值服务-->
+			<div id="zengzhiService" class="select-box">
+				<h2>保价<em class="close">&times;</em></h2>
+				<p>请填写您的物品实际价值 <input type="text" />元</p>
+				<p>预计收取费用 <input type="text" value="0"/>元</p>
+				<div>
+					<h3>温馨提示：</h3>
+					<p> 1、预估收取费用仅供参考，请以收派员收取为准；</p>
+					<p> 2、物品价值不能>100万元，如需寄递价值>100万元的物品， 请拨打客服热线<a href="tel:95338">95338</a></p>
+					<p> 3、报价物品声明价值>2万元，将为您提供特安服务，系统会进行实时信息监控，保证货物安全</p>
+				</div>
+				<p class="confirm-btn">确       定</p>
+			</div>
+		</div>
+		<script src="../js/libs/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">						
+			$('#goodsType').click(function(){
+				$('#goodsSelect').animate({
+					bottom: 0 + 'px'
+				},200);
+			});
+			$('#zengzhiSelect').click(function(){
+				$('#zengzhiService').animate({
+					bottom: 0 + 'px'
+				},200);
+			});
+			$('#doorDelivery').click(function(){
+				$('#serviceSelect').animate({
+					bottom: 0 + 'px'
+				},200);
+			});
+			$('#payType').click(function(){
+				$('#paySelect').animate({
+					bottom: 0 + 'px'
+				},200);
+			});
+			$('.select-box').find('li').click(function(){
+				$(this).addClass('active').siblings().removeClass('active');
+			});
+			$('.close').click(function(){
+				var _height = $(this).parents('.select-box').outerHeight();				
+				$(this).parents('.select-box').animate({
+					bottom: -800 + 'px'
+				},200);
+			});
+		</script>
+	</body>
+</html>

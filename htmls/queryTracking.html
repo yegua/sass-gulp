@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+	    <meta content="yes" name="apple-touch-fullscreen" />
+	    <meta content="telephone=no,email=no" name="format-detection" />
+	    <meta content="maximum-dpr=2" name="flexible" />
+	    <meta content="modeName=750-12" name="grid" />
+	    <script type="text/javascript" src="../js/libs/rem.js"></script>
+		<title>货物跟踪</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/order.css"/>
+		<style type="text/css">
+			@media screen and (min-width: 320px) and (max-width: 359px) {
+				.query-content li .date-show {
+					width: 30%;					
+				}
+				.query-content .icon-trip {
+					left: 31.5%;
+				}
+				.query-content .icon-sign,.query-content .icon-sender {
+					left: 30%;
+				}
+			}
+			@media screen and (min-width: 768px) {				
+				.query-content .icon-trip {
+					left: 27.2%;
+				}				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="order-contain">				
+			<div class="my-order wrapper">	
+				<header>
+					<p class="flex flex-pack-between">
+						<input type="text" placeholder="请输入运单编号进行搜索" />
+						<span></span>
+					</p>
+				</header>
+				<div class="query-content">
+					<h2 class="flex flex-align-center"><img src="../images/icon-list.png"/><span>运单号</span><span>367511005572</span></h2>
+					<!--<h2 class="flex flex-pack-between">
+						<span><img src="../static/images/icon-time.png"/>预计派送时间</span>
+						<span>2017-09-09 12：00</span>
+					</h2>-->
+					<ul>
+						<li class="flex first-list">
+							<span class="date-show"><em class="align-right">13：12</em><br /><em class="align-right">2017-01-07</em></span>
+							<span class="icon-sign"></span>
+							<span class="content-long">快件已签收（签收人姓名），期待再次为您服务。</span>
+						</li>
+						<li class="flex">
+							<span class="date-show"><em class="align-right">13：12</em><br /><em class="align-right">2017-01-07</em></span>
+							<span class="icon-trip"></span>
+							<span class="content-long">快件已在派送途中，请您准备签收 （派件人：杨锦涛，电话：13128325000）</span>
+						</li>
+						<li class="flex">
+							<span class="date-show"><em class="align-right">13：12</em><br /><em class="align-right">2017-01-07</em></span>
+							<span class="icon-trip"></span>
+							<span class="content-long">快件已在派送途中，请您准备签收 （派件人：杨锦涛，电话：13128325000）</span>
+						</li>
+						<li class="flex">
+							<span class="date-show"><em class="align-right">13：12</em><br /><em class="align-right">2017-01-07</em></span>
+							<span class="icon-trip"></span>
+							<span class="content-long">快件已在派送途中，请您准备签收 （派件人：杨锦涛，电话：13128325000）</span>
+						</li>
+						<li class="flex last-list">
+							<span class="date-show"><em class="align-right">13：12</em><br /><em class="align-right">2017-01-07</em></span>
+							<span class="icon-sender"></span>
+							<span class="content-long" style="border-bottom: none;">【深圳网点】已收取收件</span>
+						</li>
+					</ul>
+				</div>
+			</div>			
+		</div>
+	</body>
+</html>
